@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('maestros', function (Blueprint $table) {
+        Schema::create('horarios', function (Blueprint $table) {
             $table->id();
-            $table->string('ci');
-            $table->string('nombre');
-            $table->string('apellido');
-            $table->string('telefono');
+            $table->time('horaEntrada');
+            $table->time('horaSalida');
+            $table->enum('Dia', ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']);
             $table->timestamps();
         });
 
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('maestros');
+        Schema::dropIfExists('horarios');
     }
 };
