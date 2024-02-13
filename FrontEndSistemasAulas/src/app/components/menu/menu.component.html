@@ -1,0 +1,47 @@
+<!-- app.component.html -->
+<div class="app-container">
+  <header class="app-header">
+    <h1>Sistema de Gestión de Aulas Saint Andrew's</h1>
+  </header>
+  <main class="app-main">
+    <div class="dashboard">
+
+      <!-- Tarjeta de Estudiantes -->
+      <div class="card">
+        <img src="assets/img/4.jpg" alt="Estudiantes">
+        <div class="content">
+          <h2>Estudiantes</h2>
+          <p>200 Estudiantes</p>
+        </div>
+        <div class="actions">
+          <button mat-raised-button color="primary" routerLink="/estudiantes">Inscripciones</button>
+          <button mat-raised-button color="accent" routerLink="/estudiantes">Reporte</button>
+        </div>
+      </div>
+
+      <!-- Tarjeta de Maestros -->
+      <div class="card">
+        <img src="assets/img/5.jpg" alt="Maestros">
+        <div class="content">
+          <h2>Maestros</h2>
+          <p>30 Maestros</p>
+        </div>
+        <div class="actions">
+          <button mat-raised-button color="primary" routerLink="/maestros">Registro</button>
+          <button mat-raised-button color="accent" routerLink="/maestros">Listado</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botones adicionales -->
+    <nav class="app-nav">
+      <button mat-button routerLink="/aulas">Aulas</button>
+      <button mat-button routerLink="/horarios">Horarios</button>
+      <button mat-button routerLink="/materias">Materias</button>
+      <button mat-button routerLink="/niveles">Niveles</button>
+      <button mat-button routerLink="/paralelos">Paralelos</button>
+      <button mat-button routerLink="/horario-materia-aula">Horario-Materia-Aula</button>
+      <button mat-button routerLink="/nivel-estudiante-paralelo-aula">Nivel-Estudiante-Paralelo-Aula</button>
+    </nav>
+  </main>
+</div>
