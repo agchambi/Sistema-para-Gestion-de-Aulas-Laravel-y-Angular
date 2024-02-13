@@ -21,17 +21,21 @@ class NivelEstudianteParaleloAulaController extends Controller
             'id_estudiante' => 'required|exists:estudiantes,id',
             'id_paralelo' => 'required|exists:paralelos,id',
             'id_aula' => 'required|exists:aulas,id',
-            'año' => 'required|digits:4',
-        ]);
+            'anio' => 'required|digits:4',
+     ]);
 
         if ($validator->fails()) {
-            return response()->json($validator->errors(), 400);
+         return response()->json($validator->errors(), 400);
         }
 
-        $asignacion = NivelEstudianteParaleloAula::create($validator->validated());
+        $validated = $validator->validated();
+        $validated['anio'] = $validated['anio'] ?? date('Y');
+
+        $asignacion = NivelEstudianteParaleloAula::create($validated);
 
         return response()->json($asignacion, 201);
     }
+
 
     public function show($id)
     {
@@ -57,7 +61,7 @@ class NivelEstudianteParaleloAulaController extends Controller
             'id_estudiante' => 'exists:estudiantes,id',
             'id_paralelo' => 'exists:paralelos,id',
             'id_aula' => 'exists:aulas,id',
-            'año' => 'digits:4',
+            'anio' => 'digits:4',
         ]);
 
         if ($validator->fails()) {

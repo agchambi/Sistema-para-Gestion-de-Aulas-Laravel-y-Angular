@@ -1,1 +1,30 @@
-<p>maestro-detail works!</p>
+<div class="container">
+  <h2 class="title">Detalles del Maestro</h2>
+
+  <form [formGroup]="maestroForm" (ngSubmit)="onSubmit()" novalidate>
+    <mat-form-field appearance="fill">
+      <mat-label>CI</mat-label>
+      <input matInput formControlName="ci">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombre">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Apellido</mat-label>
+      <input matInput formControlName="apellido">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Teléfono</mat-label>
+      <input matInput formControlName="telefono">
+    </mat-form-field>
+
+    <div class="form-buttons">
+      <button mat-stroked-button color="primary" type="submit" [disabled]="!maestroForm.valid">Guardar</button>
+      <button mat-stroked-button color="warn" routerLink="/maestros">Cancelar</button>
+    </div>
+  </form>
+</div>

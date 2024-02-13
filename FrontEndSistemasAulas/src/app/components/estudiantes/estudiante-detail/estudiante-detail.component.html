@@ -1,1 +1,38 @@
-<p>estudiante-detail works!</p>
+<div class="container">
+  <h2 class="title">Detalles del Estudiante</h2>
+
+  <form [formGroup]="estudianteForm" (ngSubmit)="onSubmit()" novalidate>
+    <mat-form-field appearance="fill">
+      <mat-label>CI</mat-label>
+      <input matInput formControlName="ci">
+    </mat-form-field>
+
+    <mat-divider></mat-divider> <!-- Divisor entre CI y Nombre -->
+
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombre">
+    </mat-form-field>
+
+    <mat-divider></mat-divider> <!-- Divisor entre Nombre y Apellido -->
+
+    <mat-form-field appearance="fill">
+      <mat-label>Apellido</mat-label>
+      <input matInput formControlName="apellido">
+    </mat-form-field>
+
+    <mat-divider></mat-divider> <!-- Divisor entre Apellido y Teléfono -->
+
+    <mat-form-field appearance="fill">
+      <mat-label>Teléfono</mat-label>
+      <input matInput formControlName="telefono">
+    </mat-form-field>
+
+    <!-- Añade cualquier otro campo específico para estudiantes aquí -->
+
+    <div class="form-buttons">
+      <button mat-stroked-button color="primary" type="submit" [disabled]="!estudianteForm.valid">Guardar</button>
+      <button mat-stroked-button color="warn" routerLink="/estudiantes">Cancelar</button>
+    </div>
+  </form>
+</div>

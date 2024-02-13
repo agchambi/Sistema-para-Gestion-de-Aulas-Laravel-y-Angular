@@ -1,1 +1,57 @@
-<p>nivel-estudiante-paralelo-aula-detail works!</p>
+<div class="container">
+  <h2 class="title">Inscripción de Estudiantes</h2>
+
+  <form [formGroup]="inscripcionForm" (ngSubmit)="onSubmit()" novalidate>
+    <!-- Selector de Estudiante -->
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Estudiante</mat-label>
+      <mat-select formControlName="idEstudiante">
+        <mat-option *ngFor="let estudiante of estudiantes" [value]="estudiante.id">
+          {{ estudiante.nombre }} <!-- Asumiendo que tienes una propiedad 'nombre' en tu modelo de estudiante -->
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Selector de Nivel -->
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Nivel</mat-label>
+      <mat-select formControlName="idNivel">
+        <mat-option *ngFor="let nivel of niveles" [value]="nivel.id">
+          {{ nivel.nivel }} <!-- Asumiendo que tienes una propiedad 'nombre' en tu modelo de nivel -->
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Selector de Paralelo -->
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Paralelo</mat-label>
+      <mat-select formControlName="idParalelo">
+        <mat-option *ngFor="let paralelo of paralelos" [value]="paralelo.id">
+          {{ paralelo.paralelo }} <!-- Asumiendo que tienes una propiedad 'nombre' en tu modelo de paralelo -->
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Selector de Aula -->
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Aula</mat-label>
+      <mat-select formControlName="idAula">
+        <mat-option *ngFor="let aula of aulas" [value]="aula.id">
+          {{ aula.aula }} <!-- Asumiendo que tienes una propiedad 'nombre' en tu modelo de aula -->
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Campo de Año -->
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Año</mat-label>
+      <input matInput formControlName="anio">
+    </mat-form-field>
+
+    <!-- Botones de Acción -->
+    <div class="form-actions">
+      <button mat-raised-button color="primary" type="submit" [disabled]="!inscripcionForm.valid">Guardar</button>
+      <button mat-raised-button color="warn" >Cancelar</button>
+    </div>
+  </form>
+</div>

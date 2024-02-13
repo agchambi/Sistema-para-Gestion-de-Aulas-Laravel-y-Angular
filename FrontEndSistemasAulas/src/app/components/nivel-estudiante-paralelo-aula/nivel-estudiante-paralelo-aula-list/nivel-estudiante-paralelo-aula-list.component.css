@@ -1,0 +1,39 @@
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.search-container {
+  margin: 20px 0;
+}
+
+.mat-elevation-z8 {
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2), 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12);
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+button {
+  margin-bottom: 20px;
+  display: block; /* O 'flex' si prefieres centrarlo con flexbox */
+}
+
+/* Si usas flexbox para centrar el botón */
+button {
+  margin: 0 auto 20px;
+  display: flex;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+/* Estilos adicionales para la tabla y paginador si es necesario */

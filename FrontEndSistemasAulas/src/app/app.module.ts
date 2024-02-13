@@ -1,5 +1,7 @@
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatSelectModule } from '@angular/material/select';
 //modules
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -69,6 +71,8 @@ import { MenuComponent } from './components/menu/menu.component';
     MatTableModule,
     MatPaginator,
     MatSort,
+    MatSelectModule,
+    MatDividerModule,
     ReactiveFormsModule
   ],
   providers: [

@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('nivel_estudiante_paralelo_aula', function (Blueprint $table) {
+        Schema::create('nivel_estudiante_paralelo_aulas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_nivel')->constrained('niveles')->onDelete('cascade');
             $table->foreignId('id_estudiante')->constrained('estudiantes')->onDelete('cascade');
             $table->foreignId('id_paralelo')->constrained('paralelos')->onDelete('cascade');
             $table->foreignId('id_aula')->constrained('aulas')->onDelete('cascade');
-            $table->year('año');
+            $table->year('anio');
             $table->timestamps();
         });
 
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nivel_estudiante_paralelo_aula');
+        Schema::dropIfExists('nivel_estudiante_paralelo_aulas');
     }
 };
